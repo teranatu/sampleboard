@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/', 'PostController@index')->name('posts.index');
 
 Route::get('/posts/search', 'PostController@search')->name('posts.search');
+Route::get('/posts/searchDate', 'PostController@searchDate')->name('posts.searchDate');
 
 Route::resource('/posts', 'PostController',  ['except' => ['index']]);
 Route::resource('/users', 'UserController');

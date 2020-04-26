@@ -4,9 +4,10 @@
 <div class="card-body">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h5 class="card-title">検索フォーム</h5>
 
+
+            <div class="col-6">
+                <h5 class="card-title">検索フォーム</h5>
                 <div id="custom-search-input">
                     <div class="input-group col-md-12">
                         <form action="{{ route('posts.search') }}" method="get">
@@ -20,27 +21,22 @@
                         </form>
                     </div>
                 </div>
-
-                
-                <div style="overflow:hidden;">
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-12">
-                                <input type="text" id="input-date">
-                            </div>
-                            <div class="col-12">
-                                <div id="datetimepicker12"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-
-
-                
-                
-
             </div>
+
+
+            <div class="form-group col-6">
+                <div class="col-12 text-center">
+                    <form action="{{ route('posts.searchDate') }}" method="get">
+                        <input type="text" id="input-date" name="datetimepicker">
+                        <button type="submit"></button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-12">
+                <div id="datetimepicker12"></div>
+            </div>
+                
+
         </div>
     </div>
 </div>
@@ -60,7 +56,7 @@
     @foreach($posts as $post)
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">{{ $post->title }}</h5>
+            <h5 class="card-title">タイトル:{{ $post->title }}</h5>
             <h5 class="card-title">
                 カテゴリー:
                  <a href="{{ route('posts.index', ['category_id' => $post->category_id]) }}">
@@ -80,7 +76,8 @@
                 投稿者:
                 <a href="{{ route('users.show', $post->user_id) }}">{{ $post->user->name }}</a>
             </h5>
-            <p class="card-text">{{ $post->content }}</p>
+            <p class="card-text">内容:{{ $post->content }}</p>
+            <p class="card-text">投稿日時:{{ $post->created_at }}</p>
             <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">詳細</a>
           </div>
         </div>

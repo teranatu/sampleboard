@@ -7,6 +7,6 @@ $(function () {
         sideBySide: true
     });
     $("#datetimepicker12").on("change.datetimepicker", function (e) {
-        $("#input-date").val(e.date.format('YYYY/MM/DD'));
+        $("#input-date").val(e.date.format('YYYY-MM-DD'));
     });
 });

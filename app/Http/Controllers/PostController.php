@@ -169,4 +169,17 @@ class PostController extends Controller
             'search_query'  => $request->search
         ]);
     }
+
+    public function searchDate(Request $request)
+    {
+        $posts = Post::WhereDate('created_at', $request->datetimepicker)->paginate(3);
+
+        $search_result = $request->datetimepicker.'に投稿された記事は'.$posts->total().'件';
+        
+        return view('posts.index', [
+            'posts' => $posts,
+            'search_result' => $search_result,
+            'search_query'  => $request->search
+        ]);
+    }
 }
