@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h5 class="card-title">検索フォーム</h5>
+
                 <div id="custom-search-input">
                     <div class="input-group col-md-12">
                         <form action="{{ route('posts.search') }}" method="get">
@@ -19,6 +20,22 @@
                         </form>
                     </div>
                 </div>
+
+                
+                <div style="overflow:hidden;">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="text" id="input-date">
+                            </div>
+                            <div class="col-12">
+                                <div id="datetimepicker12"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
             </div>
         </div>
     </div>

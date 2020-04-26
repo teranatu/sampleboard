@@ -68,7 +68,7 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
-        ////////
+        //
     }
 
     /**

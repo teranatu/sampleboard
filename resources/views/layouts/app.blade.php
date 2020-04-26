@@ -10,8 +10,21 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.9.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"
+    ></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css"
+    />
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <!-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css"> -->
@@ -87,5 +100,7 @@
             </div>
         </main>
     </div>
+    <script src="{{ asset('js/datetimepicker.js') }}" defer></script>
+
 </body>
 </html>
