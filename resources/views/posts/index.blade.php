@@ -28,7 +28,9 @@
                 <div class="col-12 text-center">
                     <form action="{{ route('posts.searchDate') }}" method="get">
                         <input type="text" id="input-date" name="datetimepicker">
-                        <button type="submit"></button>
+                        <button class="btn btn-info" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -89,6 +91,9 @@
 
 @elseif(isset($tag_name))
     {{ $posts->appends(['tag_name' => $tag_name])->links() }}
+
+@elseif(isset($search_query))
+    {{ $posts->appends(['search' => $search_query])->links() }}
 
 @elseif(isset($search_query))
     {{ $posts->appends(['search' => $search_query])->links() }}
